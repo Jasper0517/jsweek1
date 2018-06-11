@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./stylesheets/all.css">
+    <link rel="stylesheet" href="./font/style.css">
+</head>
+<body>
+    <div id="app">
+        <div id="nav">
+            <ul>
+                <li>My Tasks</li>
+                <li>In progress</li>
+                <li>Completed</li>
+            </ul>
+        </div>
+        <div id="todobody">
+            <div id="todo">
+                <div id="addTodo">
+                <input type="checkbox" name="" id="">
+                        <input type="text" class="addTodo" placeholder="Type Something Here....">            
+                        <span class="icon-star-empty star"></span>
+                        <span class="icon-edit-pencil pencil"></span>
+                    </div>
+                    
+                <div id="addDetail">
+                    <span clss="icon-calendar"></span>
+                    <span>
+                        Deadline
+                    </span>    
+                    <input type="date" name="" id="" placeholder="yyyy/mm/dd">
+                    <input type="time" name="" id="">
+                    <span clss="icon-file-empty"></span>
+                    <span>File</span>    
+                    <span>Comment</span>    
+                    <textarea name="" id="" cols="30" rows="10" placeholder="Type your memo here"></textarea>
+                    <input type="button" class="btn cancel" value="X Cancel">
+                    <input type="button" class="btn add" value="+ Add Task">
+                </div>
+            </div>
+            <div id="todolist">
+                <ul>
+                    <li class="list">
+                        <input type="checkbox" name="" id="">
+                        <span class="msg">
+                            Type Something Here....
+                        </span>
+                        <span class="icon-star-empty star"></span>
+                        <span class="icon-edit-pencil pencil"></span>
+                        <div class="second">
+                            <span class="icon-calendar">
+                            </span>
+                            <span class="caltext">5/14</span>
+                            <span class="icon-file-empty"></span>
+                            <span class="icon-bubble2"></span>
+                        </div>
+                    </li>
+                    <li class="list point">
+                        <input type="checkbox" name="" id="">
+                        <span class="msg">
+                        Type Something Here....
+                        </span>
+                        <span class="icon-star-full yellow"></span>
+                        <span class="icon-edit-pencil pencil"></span>
+                        <div class="second">
+                        <span class="icon-calendar">
+                        </span>
+                        <span class="caltext">5/14</span>
+                        <span class="icon-file-empty"></span>
+                        <span class="icon-bubble2"></span>
+                        </div>
+                    </li>
+                    <li class="list">
+                        <input type="checkbox" name="" id="" checked="true">
+                        <span class="msg completed">
+                            Type Something Here....
+                        </span>
+                        <span class="icon-star-empty star"></span>
+                        <span class="icon-edit-pencil pencil"></span>
+                        <div class="second">
+                            <span class="icon-calendar">
+                            </span>
+                            <span class="caltext">5/14</span>
+                            <span class="icon-file-empty"></span>
+                            <span class="icon-bubble2"></span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

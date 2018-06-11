@@ -1,0 +1,265 @@
+/* line 5, ../../../../../../Library/Ruby/Gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../../Library/Ruby/Gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../../Library/Ruby/Gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../../Library/Ruby/Gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../../Library/Ruby/Gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../../Library/Ruby/Gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../../Library/Ruby/Gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../../Library/Ruby/Gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../../Library/Ruby/Gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 14, ../sass/all.scss */
+#app {
+  margin: 0 auto;
+  *zoom: 1;
+}
+/* line 4, ../sass/all.scss */
+#app:after, #app:before {
+  content: "";
+  display: table;
+}
+/* line 8, ../sass/all.scss */
+#app:after {
+  clear: both;
+}
+/* line 17, ../sass/all.scss */
+#app #nav {
+  width: 100%;
+  height: 50px;
+  background-color: RGBA(100, 146, 214, 1);
+  text-align: center;
+}
+/* line 23, ../sass/all.scss */
+#app #nav ul {
+  max-width: 75%;
+  margin: 0 auto;
+  line-height: 48px;
+}
+/* line 28, ../sass/all.scss */
+#app #nav ul li {
+  width: calc(100% / 3);
+  color: RGBA(36, 71, 159, 1);
+  float: left;
+  cursor: pointer;
+}
+/* line 34, ../sass/all.scss */
+#app #nav ul li:hover {
+  color: white;
+  border-bottom: solid 3px black;
+  padding-bottom: -2px;
+}
+/* line 42, ../sass/all.scss */
+#app #todobody {
+  width: 100%;
+  height: 1000px;
+  background-color: RGBA(225, 225, 225, 1);
+  padding: 20px 0;
+}
+/* line 48, ../sass/all.scss */
+#app #todobody #todo {
+  width: 70%;
+  margin: 0 auto;
+  box-shadow: 0 3px 0 0 RGBA(200, 200, 200, 1);
+  border-radius: 5px;
+}
+/* line 53, ../sass/all.scss */
+#app #todobody #todo #addTodo {
+  border-bottom: 3px solid RGBA(225, 225, 225, 1);
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  background-color: RGBA(242, 242, 242, 1);
+}
+/* line 59, ../sass/all.scss */
+#app #todobody #todo #addTodo .addTodo {
+  width: 70%;
+  height: 25px;
+  background-color: RGBA(242, 242, 242, 1);
+  border: none;
+  font-size: 20px;
+}
+/* line 65, ../sass/all.scss */
+#app #todobody #todo #addTodo .addTodo:focus {
+  outline: RGBA(242, 242, 242, 1);
+}
+/* line 69, ../sass/all.scss */
+#app #todobody #todo #addTodo span {
+  margin-right: 20px;
+}
+/* line 72, ../sass/all.scss */
+#app #todobody #todo #addTodo .pencil {
+  color: RGBA(90, 136, 228, 1);
+}
+/* line 75, ../sass/all.scss */
+#app #todobody #todo #addTodo .addTodo::placeholder {
+  color: black;
+}
+/* line 79, ../sass/all.scss */
+#app #todobody #todo #addDetail {
+  position: relative;
+  height: 300px;
+  background-color: RGBA(242, 242, 242, 1);
+  padding-left: 50px;
+}
+/* line 84, ../sass/all.scss */
+#app #todobody #todo #addDetail span {
+  width: 100%;
+  display: inline-block;
+  padding: 10px 0;
+}
+/* line 89, ../sass/all.scss */
+#app #todobody #todo #addDetail textarea {
+  display: block;
+  width: 80%;
+  height: 80px;
+  border: none;
+}
+/* line 95, ../sass/all.scss */
+#app #todobody #todo #addDetail .btn {
+  position: absolute;
+  width: calc(100% / 2);
+  height: 40px;
+  border: none;
+  top: 260px;
+  cursor: pointer;
+  color: RGBA(196, 0, 34, 1);
+  font-size: 18px;
+}
+/* line 104, ../sass/all.scss */
+#app #todobody #todo #addDetail .btn:hover {
+  background-color: RGBA(90, 136, 228, 1);
+  color: white;
+}
+/* line 109, ../sass/all.scss */
+#app #todobody #todo #addDetail .add {
+  right: 0;
+}
+/* line 112, ../sass/all.scss */
+#app #todobody #todo #addDetail .cancel {
+  left: 0;
+}
+/* line 117, ../sass/all.scss */
+#app #todobody #todolist {
+  width: 70%;
+  margin: 15px auto;
+}
+/* line 120, ../sass/all.scss */
+#app #todobody #todolist .list {
+  height: 50px;
+  padding-left: 30px;
+  padding-top: 20px;
+  margin-top: 5px;
+  background-color: RGBA(242, 242, 242, 1);
+}
+/* line 127, ../sass/all.scss */
+#app #todobody #todolist .list .pencil {
+  color: gray;
+}
+/* line 130, ../sass/all.scss */
+#app #todobody #todolist .list .star {
+  color: black;
+}
+/* line 133, ../sass/all.scss */
+#app #todobody #todolist .list .yellow {
+  color: RGBA(236, 171, 30, 1);
+}
+/* line 136, ../sass/all.scss */
+#app #todobody #todolist .list span {
+  margin-right: 29px;
+  font-size: 16px;
+}
+/* line 140, ../sass/all.scss */
+#app #todobody #todolist .list .second {
+  height: 14px;
+  padding-top: 5px;
+}
+/* line 143, ../sass/all.scss */
+#app #todobody #todolist .list .second .msg {
+  margin-right: 35px;
+}
+/* line 146, ../sass/all.scss */
+#app #todobody #todolist .list .second .icon-calendar {
+  margin-right: 2px;
+  font-size: 10px;
+  color: RGBA(173, 168, 158, 1);
+}
+/* line 151, ../sass/all.scss */
+#app #todobody #todolist .list .second .icon-file-empty {
+  margin-right: 5px;
+  font-size: 10px;
+  color: RGBA(173, 168, 158, 1);
+}
+/* line 156, ../sass/all.scss */
+#app #todobody #todolist .list .second .icon-bubble2 {
+  margin-right: 5px;
+  font-size: 10px;
+  color: RGBA(173, 168, 158, 1);
+}
+/* line 161, ../sass/all.scss */
+#app #todobody #todolist .list .second .caltext {
+  margin-right: 5px;
+  font-size: 10px;
+}
+/* line 166, ../sass/all.scss */
+#app #todobody #todolist .list .completed {
+  text-decoration: line-through;
+}
+/* line 170, ../sass/all.scss */
+#app #todobody #todolist .point {
+  background-color: RGBA(253, 244, 220, 1);
+}

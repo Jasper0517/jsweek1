@@ -1,0 +1,175 @@
+@import "compass/reset";
+
+@mixin clearfix {
+    &:after, &:before {
+      content: "";
+      display: table;
+    }
+    &:after{
+      clear:both;
+    }
+    *zoom:1;
+  }  
+
+  #app{
+      margin: 0 auto;
+      @include clearfix;                    
+      #nav{
+        width: 100%;
+        // border: 1px solid black;
+        height: 50px;
+        background-color: RGBA(100, 146, 214, 1.00);
+        text-align: center;
+        ul{
+          max-width: 75%;
+          margin: 0 auto;
+          // height: 100%;
+          line-height: 48px;
+          li{
+            width: calc(100% / 3);
+            color: RGBA(36, 71, 159, 1.00);
+            float: left;
+            cursor: pointer;
+            // margin: 0 10px 0 10px;
+            &:hover{
+              color: white;
+              border-bottom: solid 3px black;
+              padding-bottom: -2px;
+            }
+          }
+        }
+      }
+      #todobody{
+        width: 100%;
+        height: 1000px;
+        background-color: RGBA(225, 225, 225, 1.00);
+        padding: 20px 0;
+        
+        #todo{
+          width: 70%;
+          margin: 0 auto;
+          box-shadow: 0 3px 0 0 RGBA(200, 200, 200, 1.00);
+          border-radius: 5px;
+          #addTodo{
+            border-bottom: 3px solid RGBA(225, 225, 225, 1.00);
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            background-color: RGBA(242, 242, 242, 1.00);
+            .addTodo{
+              width: 70%;
+              height: 25px;
+              background-color: RGBA(242, 242, 242, 1.00);
+              border: none;
+              font-size: 20px;
+              &:focus {
+                outline: RGBA(242, 242, 242, 1.00);
+              }
+            }
+            span{
+              margin-right: 20px;
+            }
+            .pencil{
+              color: RGBA(90, 136, 228, 1.00);
+            }
+            .addTodo::placeholder {
+              color: black;
+            }
+          }
+          #addDetail{
+            position: relative;
+            height: 300px;
+            background-color: RGBA(242, 242, 242, 1.00);
+            padding-left: 50px;
+            span{
+              width: 100%;
+              display: inline-block;
+              padding: 10px 0;
+            }
+            textarea{
+              display: block;
+              width: 80%;
+              height: 80px;
+              border: none;
+            }
+            .btn{
+              position: absolute;
+              width: calc(100% / 2);
+              height: 40px;
+              border: none;
+              top: 260px;
+              cursor: pointer;
+              color: RGBA(196, 0, 34, 1.00);   
+              font-size: 18px;           
+              &:hover{
+                background-color: RGBA(90, 136, 228, 1.00);
+                color: white;
+              }
+            }
+            .add{
+              right: 0;
+            }
+            .cancel{
+              left: 0;
+            }
+          }
+        }
+        #todolist{
+          width: 70%; 
+          margin: 15px auto;
+          .list{
+            height: 50px;    
+            // line-height: 40px;
+            padding-left: 30px;  
+            padding-top: 20px;  
+            margin-top: 5px; 
+            background-color: RGBA(242, 242, 242, 1.00);
+            .pencil{
+              color: gray;
+            }
+            .star{
+              color: black;
+            }
+            .yellow{
+              color: RGBA(236, 171, 30, 1.00);
+            }
+            span{
+              margin-right: 29px;    
+              font-size: 16px;          
+            }
+            .second{
+              height: 14px;
+              padding-top: 5px;
+              .msg{
+                margin-right: 35px;
+              }
+              .icon-calendar{
+                margin-right: 2px;              
+                font-size: 10px;
+                color: RGBA(173, 168, 158, 1.00);
+              }
+              .icon-file-empty{
+                margin-right: 5px;         
+                font-size: 10px;
+                color: RGBA(173, 168, 158, 1.00);
+              }
+              .icon-bubble2{
+                margin-right: 5px;            
+                font-size: 10px;
+                color: RGBA(173, 168, 158, 1.00);
+              }
+              .caltext{
+                margin-right: 5px;            
+                font-size: 10px;
+              }
+            }
+            .completed{
+              text-decoration: line-through;
+            }
+          }
+          .point{
+            background-color: RGBA(253, 244, 220, 1.00);
+          }
+        }
+      }
+  }
