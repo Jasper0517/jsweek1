@@ -7,90 +7,155 @@
     <title>Document</title>
     <link rel="stylesheet" href="./stylesheets/all.css">
     <link rel="stylesheet" href="./font/style.css">
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.js"></script>
+    <!-- 引入组件库 -->
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
 </head>
 <body>
     <div id="app">
         <div id="nav">
             <ul>
-                <li>My Tasks</li>
-                <li>In progress</li>
-                <li>Completed</li>
+                <li :class="{'actived': Type == 'all'}" @click="Type = 'all'">My Tasks</li>
+                <li :class="{'actived': Type == 'progress'}" @click="Type = 'progress'">In progress</li>
+                <li :class="{'actived': Type == 'Completed'}" @click="Type = 'Completed'">Completed</li>
             </ul>
         </div>
         <div id="todobody">
-            <div id="todo">
-                <div id="addTodo">
-                <input type="checkbox" name="" id="">
-                        <input type="text" class="addTodo" placeholder="Type Something Here....">            
-                        <span class="icon-star-empty star"></span>
-                        <span class="icon-edit-pencil pencil"></span>
-                    </div>
-                    
-                <div id="addDetail">
-                    <span clss="icon-calendar"></span>
-                    <span>
-                        Deadline
-                    </span>    
-                    <input type="date" name="" id="" placeholder="yyyy/mm/dd">
-                    <input type="time" name="" id="">
-                    <span clss="icon-file-empty"></span>
-                    <span>File</span>    
-                    <span>Comment</span>    
-                    <textarea name="" id="" cols="30" rows="10" placeholder="Type your memo here"></textarea>
-                    <input type="button" class="btn cancel" value="X Cancel">
-                    <input type="button" class="btn add" value="+ Add Task">
+            <div class="addTodo">
+                <input v-model="newAdd.addText" type="text" name="" id="add" placeholder="+ Add Task" @focus="newAdd.addisEdit = true">
+                <hr class="line"  v-if="newAdd.addisEdit">
+                <div class="addDetail" v-if="newAdd.addisEdit">
+                    <span class="Deadline icon-calendar">Deadline</span>    
+                    <input v-model="newAdd.addDate" type="date" name="" id="" placeholder="yyyy/mm/dd">
+                    <span class="icon-file-empty">File</span>  
+                    <div class="icon-plus"></div>  
+                    <span class="icon-message-circle">Comment</span>    
+                    <textarea v-model="newAdd.addComment" name="" id="" cols="30" rows="10" placeholder="Type your memo here"></textarea>
+                    <input type="button" class="btn cancel" value="X Cancel" @click="newAdd.addisEdit = !newAdd.addisEdit">
+                    <input type="button" class="btn add" value="+ Add Task" @click="add">
                 </div>
             </div>
-            <div id="todolist">
-                <ul>
-                    <li class="list">
-                        <input type="checkbox" name="" id="">
-                        <span class="msg">
-                            Type Something Here....
-                        </span>
-                        <span class="icon-star-empty star"></span>
-                        <span class="icon-edit-pencil pencil"></span>
-                        <div class="second">
-                            <span class="icon-calendar">
-                            </span>
-                            <span class="caltext">5/14</span>
-                            <span class="icon-file-empty"></span>
-                            <span class="icon-bubble2"></span>
-                        </div>
-                    </li>
-                    <li class="list point">
-                        <input type="checkbox" name="" id="">
-                        <span class="msg">
-                        Type Something Here....
-                        </span>
-                        <span class="icon-star-full yellow"></span>
-                        <span class="icon-edit-pencil pencil"></span>
-                        <div class="second">
-                        <span class="icon-calendar">
-                        </span>
-                        <span class="caltext">5/14</span>
-                        <span class="icon-file-empty"></span>
-                        <span class="icon-bubble2"></span>
-                        </div>
-                    </li>
-                    <li class="list">
-                        <input type="checkbox" name="" id="" checked="true">
-                        <span class="msg completed">
-                            Type Something Here....
-                        </span>
-                        <span class="icon-star-empty star"></span>
-                        <span class="icon-edit-pencil pencil"></span>
-                        <div class="second">
-                            <span class="icon-calendar">
-                            </span>
-                            <span class="caltext">5/14</span>
-                            <span class="icon-file-empty"></span>
-                            <span class="icon-bubble2"></span>
-                        </div>
-                    </li>
-                </ul>
+            <div id="todo" v-for="(todo,id) in filtertodos">
+                <div id="addTodo" :class="{'starbg':todo.isStar}">
+                    <input type="checkbox" name="" :id="id" v-model="todo.isCompleted">
+                    <label :for="id"></label>
+                    <span class="item" :class="{'starbg':todo.isStar,'isCompleted':todo.isCompleted}">{{todo.title}}</span>
+                    <span class="icon-star-empty star" :class="{'icon-star-full' : todo.isStar,'yellow' : todo.isStar}" @click="todo.isStar = !todo.isStar"></span>
+                    <span class="icon-edit-pencil pencil" @click="todo.isEdit = !todo.isEdit"></span>
+                </div>
+                <hr class="line" v-if="todo.isEdit">
+                <div class="addDetail" v-if="todo.isEdit">
+                    <span class="Deadline icon-calendar">Deadline</span>    
+                    <input type="date" name="" id="" placeholder="yyyy/mm/dd" v-model="todo.date">
+                    <span class="icon-file-empty">File</span>  
+                    <div class="icon-plus"></div>  
+                    <span class="icon-message-circle">Comment</span>    
+                    <textarea name="" id="" cols="30" rows="10" v-model="todo.comment" placeholder="Type your memo here"></textarea>
+                    <input type="button" class="btn cancel" value="X Cancel" @click="todo.isEdit = !todo.isEdit">
+                    <input type="button" class="btn add" value="+ Save Task">
+                </div>
+            </div>
+            <div class="count">
+                {{count}} tasks left
             </div>
         </div>
     </div>
 </body>
+<script>
+    let vm = new Vue({
+        el: "#app",
+        data: {
+            todos: [
+                {
+                    title: "test1",
+                    isEdit: false,
+                    isStar: false,
+                    isCompleted: false,
+                    date: "",
+                    comment: "",
+                },
+                {
+                    title: "test2",
+                    isEdit: false,
+                    isStar: false,
+                    isCompleted: false,
+                    date: "",
+                    comment: "",
+                },
+                {
+                    title: "test3",
+                    isEdit: false,
+                    isStar: false,
+                    isCompleted: false,
+                    date: "",
+                    comment: "",
+                },
+            ],
+            newAdd:{
+                addText: "",
+                addDate: "",
+                addComment: "",
+                addisEdit: false,
+            },
+            Type: "all",
+        },
+        computed:{
+            filtertodos(){
+                const vm = this;
+                let newTodos;
+
+                if(vm.Type == "all"){
+                    newTodos = vm.todos;
+                }else if(vm.Type == "progress"){
+                    newTodos = vm.todos.filter(filter =>{
+                        return (filter.isCompleted ? false : true); 
+                    });
+                }else{
+                    newTodos = vm.todos.filter(filter =>{
+                        return (filter.isCompleted ? true : false); 
+                    });
+                }
+                
+                return newTodos.sort((a,b)=>{
+                    let scoreA = (a.isStar ? -10 : 0) + (a.isCompleted ? 10 : 0)
+                    let scoreB = (b.isStar ? -10 : 0) + (b.isCompleted ? 10 : 0)
+
+                    if(scoreA > scoreB){
+                        return 1;
+                    }else if (scoreA < scoreB){
+                        return 0;
+                    }else{
+                        return -1;
+                    }
+                });
+            },
+            count(){
+                let cnt = 0;
+                this.todos.forEach(element => {
+                    if(!element.isCompleted) cnt++;
+                });
+                return cnt;
+            }
+        },
+        methods:{
+            add(){
+                if(this.newAdd.addText == "") return;
+                this.todos.push({
+                    title: this.newAdd.addText,
+                    isEdit: false,
+                    isStar: false,
+                    isCompleted: false,
+                    date: this.newAdd.addDate,
+                    comment: this.newAdd.addComment,
+                });
+                this.newAdd.addText = "";
+                this.newAdd.addDate = "";
+                this.newAdd.addComment = "";
+                this.newAdd.addisEdit = false;
+            }
+        },
+    });
+</script>
 </html>

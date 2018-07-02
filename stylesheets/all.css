@@ -66,111 +66,132 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 /* line 14, ../sass/all.scss */
 #app {
   margin: 0 auto;
-  *zoom: 1;
 }
-/* line 4, ../sass/all.scss */
-#app:after, #app:before {
-  content: "";
-  display: table;
+
+/* line 19, ../sass/all.scss */
+.yellow {
+  color: RGBA(242, 145, 30, 1);
 }
-/* line 8, ../sass/all.scss */
-#app:after {
-  clear: both;
+
+/* line 23, ../sass/all.scss */
+.starbg {
+  background-color: RGBA(255, 238, 209, 1) !important;
 }
-/* line 17, ../sass/all.scss */
-#app #nav {
+
+/* line 27, ../sass/all.scss */
+.isCompleted {
+  text-decoration: line-through;
+}
+
+/* line 31, ../sass/all.scss */
+input[type="checkbox"] {
+  display: none;
+}
+
+/* line 34, ../sass/all.scss */
+input[type="checkbox"] + label {
+  display: inline-block;
+  width: 19px;
+  height: 19px;
+  margin: -2px 10px 0 0;
+  vertical-align: middle;
+  background: url(../img/check_radio_sheet.png) left top no-repeat;
+  cursor: pointer;
+}
+
+/* line 44, ../sass/all.scss */
+input[type="checkbox"]:checked + label {
+  background: url(../img/check_radio_sheet.png) -19px top no-repeat;
+}
+
+/* line 48, ../sass/all.scss */
+#nav {
   width: 100%;
   height: 50px;
   background-color: RGBA(100, 146, 214, 1);
   text-align: center;
 }
-/* line 23, ../sass/all.scss */
-#app #nav ul {
-  max-width: 75%;
+/* line 55, ../sass/all.scss */
+#nav ul {
+  max-width: 70%;
   margin: 0 auto;
   line-height: 48px;
+  *zoom: 1;
 }
-/* line 28, ../sass/all.scss */
-#app #nav ul li {
+/* line 4, ../sass/all.scss */
+#nav ul:after, #nav ul:before {
+  content: "";
+  display: table;
+}
+/* line 8, ../sass/all.scss */
+#nav ul:after {
+  clear: both;
+}
+/* line 61, ../sass/all.scss */
+#nav ul li {
   width: calc(100% / 3);
   color: RGBA(36, 71, 159, 1);
   float: left;
   cursor: pointer;
 }
-/* line 34, ../sass/all.scss */
-#app #nav ul li:hover {
+/* line 68, ../sass/all.scss */
+#nav ul .actived {
   color: white;
   border-bottom: solid 3px black;
   padding-bottom: -2px;
 }
-/* line 42, ../sass/all.scss */
-#app #todobody {
+
+/* line 76, ../sass/all.scss */
+#todobody {
   width: 100%;
-  height: 1000px;
   background-color: RGBA(225, 225, 225, 1);
   padding: 20px 0;
 }
-/* line 48, ../sass/all.scss */
-#app #todobody #todo {
-  width: 70%;
+/* line 80, ../sass/all.scss */
+#todobody .addTodo {
+  max-width: 620px;
   margin: 0 auto;
-  box-shadow: 0 3px 0 0 RGBA(200, 200, 200, 1);
-  border-radius: 5px;
 }
-/* line 53, ../sass/all.scss */
-#app #todobody #todo #addTodo {
-  border-bottom: 3px solid RGBA(225, 225, 225, 1);
-  height: 40px;
-  line-height: 40px;
-  text-align: center;
-  background-color: RGBA(242, 242, 242, 1);
-}
-/* line 59, ../sass/all.scss */
-#app #todobody #todo #addTodo .addTodo {
-  width: 70%;
-  height: 25px;
-  background-color: RGBA(242, 242, 242, 1);
+/* line 83, ../sass/all.scss */
+#todobody .addTodo #add {
+  width: calc(100% - 30px);
+  height: 62px;
   border: none;
-  font-size: 20px;
+  padding: none;
+  font-size: 28px;
+  border-radius: 5px;
+  padding-left: 30px;
+  border: 1px solid RGBA(200, 200, 200, 1);
 }
-/* line 65, ../sass/all.scss */
-#app #todobody #todo #addTodo .addTodo:focus {
-  outline: RGBA(242, 242, 242, 1);
-}
-/* line 69, ../sass/all.scss */
-#app #todobody #todo #addTodo span {
-  margin-right: 20px;
-}
-/* line 72, ../sass/all.scss */
-#app #todobody #todo #addTodo .pencil {
-  color: RGBA(90, 136, 228, 1);
-}
-/* line 75, ../sass/all.scss */
-#app #todobody #todo #addTodo .addTodo::placeholder {
-  color: black;
-}
-/* line 79, ../sass/all.scss */
-#app #todobody #todo #addDetail {
+/* line 95, ../sass/all.scss */
+#todobody .addDetail {
   position: relative;
   height: 300px;
   background-color: RGBA(242, 242, 242, 1);
   padding-left: 50px;
 }
-/* line 84, ../sass/all.scss */
-#app #todobody #todo #addDetail span {
+/* line 100, ../sass/all.scss */
+#todobody .addDetail span {
   width: 100%;
   display: inline-block;
   padding: 10px 0;
+  font-weight: bold;
+  font-size: 20px;
+  margin-left: -20px;
 }
-/* line 89, ../sass/all.scss */
-#app #todobody #todo #addDetail textarea {
+/* line 108, ../sass/all.scss */
+#todobody .addDetail span::before {
+  padding-right: 8px;
+}
+/* line 111, ../sass/all.scss */
+#todobody .addDetail textarea {
   display: block;
   width: 80%;
   height: 80px;
   border: none;
 }
-/* line 95, ../sass/all.scss */
-#app #todobody #todo #addDetail .btn {
+/* line 117, ../sass/all.scss */
+#todobody .addDetail .btn {
   position: absolute;
   width: calc(100% / 2);
   height: 40px;
@@ -180,86 +201,137 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   color: RGBA(196, 0, 34, 1);
   font-size: 18px;
 }
-/* line 104, ../sass/all.scss */
-#app #todobody #todo #addDetail .btn:hover {
-  background-color: RGBA(90, 136, 228, 1);
+/* line 131, ../sass/all.scss */
+#todobody .addDetail .add {
   color: white;
-}
-/* line 109, ../sass/all.scss */
-#app #todobody #todo #addDetail .add {
+  background-color: RGBA(56, 122, 217, 1);
   right: 0;
 }
-/* line 112, ../sass/all.scss */
-#app #todobody #todo #addDetail .cancel {
+/* line 136, ../sass/all.scss */
+#todobody .addDetail .cancel {
   left: 0;
 }
-/* line 117, ../sass/all.scss */
-#app #todobody #todolist {
+/* line 140, ../sass/all.scss */
+#todobody .line {
+  margin: 0;
+  height: 3px;
+  color: RGBA(216, 216, 216, 1);
+  border: none;
+}
+/* line 146, ../sass/all.scss */
+#todobody #todo {
+  max-width: 620px;
+  margin: 10px auto;
+  box-shadow: 0 3px 0 0 RGBA(200, 200, 200, 1);
+  border-radius: 5px;
+}
+/* line 151, ../sass/all.scss */
+#todobody #todo #addTodo {
+  max-width: 100%;
+  height: 76px;
+  line-height: 76px;
+  text-align: center;
+  background-color: RGBA(242, 242, 242, 1);
+}
+/* line 157, ../sass/all.scss */
+#todobody #todo #addTodo .item {
+  display: inline-block;
   width: 70%;
+  height: 28px;
+  background-color: RGBA(242, 242, 242, 1);
+  font-size: 28px;
+  font-weight: bold;
+  text-align: left;
+}
+/* line 166, ../sass/all.scss */
+#todobody #todo #addTodo span {
+  font-size: 28px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+/* line 171, ../sass/all.scss */
+#todobody #todo #addTodo .pencil {
+  color: RGBA(90, 136, 228, 1);
+}
+/* line 174, ../sass/all.scss */
+#todobody #todo #addTodo .addTodo::placeholder {
+  color: black;
+}
+/* line 180, ../sass/all.scss */
+#todobody #todolist {
+  width: 620px;
   margin: 15px auto;
 }
-/* line 120, ../sass/all.scss */
-#app #todobody #todolist .list {
+/* line 183, ../sass/all.scss */
+#todobody #todolist .list {
   height: 50px;
   padding-left: 30px;
   padding-top: 20px;
   margin-top: 5px;
   background-color: RGBA(242, 242, 242, 1);
 }
-/* line 127, ../sass/all.scss */
-#app #todobody #todolist .list .pencil {
+/* line 190, ../sass/all.scss */
+#todobody #todolist .list .pencil {
   color: gray;
 }
-/* line 130, ../sass/all.scss */
-#app #todobody #todolist .list .star {
+/* line 193, ../sass/all.scss */
+#todobody #todolist .list .star {
   color: black;
 }
-/* line 133, ../sass/all.scss */
-#app #todobody #todolist .list .yellow {
+/* line 196, ../sass/all.scss */
+#todobody #todolist .list .yellow {
   color: RGBA(236, 171, 30, 1);
 }
-/* line 136, ../sass/all.scss */
-#app #todobody #todolist .list span {
+/* line 199, ../sass/all.scss */
+#todobody #todolist .list span {
   margin-right: 29px;
   font-size: 16px;
 }
-/* line 140, ../sass/all.scss */
-#app #todobody #todolist .list .second {
+/* line 203, ../sass/all.scss */
+#todobody #todolist .list .second {
   height: 14px;
   padding-top: 5px;
 }
-/* line 143, ../sass/all.scss */
-#app #todobody #todolist .list .second .msg {
+/* line 206, ../sass/all.scss */
+#todobody #todolist .list .second .msg {
   margin-right: 35px;
 }
-/* line 146, ../sass/all.scss */
-#app #todobody #todolist .list .second .icon-calendar {
+/* line 209, ../sass/all.scss */
+#todobody #todolist .list .second .icon-calendar {
   margin-right: 2px;
   font-size: 10px;
   color: RGBA(173, 168, 158, 1);
 }
-/* line 151, ../sass/all.scss */
-#app #todobody #todolist .list .second .icon-file-empty {
+/* line 214, ../sass/all.scss */
+#todobody #todolist .list .second .icon-file-empty {
   margin-right: 5px;
   font-size: 10px;
   color: RGBA(173, 168, 158, 1);
 }
-/* line 156, ../sass/all.scss */
-#app #todobody #todolist .list .second .icon-bubble2 {
+/* line 219, ../sass/all.scss */
+#todobody #todolist .list .second .icon-bubble2 {
   margin-right: 5px;
   font-size: 10px;
   color: RGBA(173, 168, 158, 1);
 }
-/* line 161, ../sass/all.scss */
-#app #todobody #todolist .list .second .caltext {
+/* line 224, ../sass/all.scss */
+#todobody #todolist .list .second .caltext {
   margin-right: 5px;
   font-size: 10px;
 }
-/* line 166, ../sass/all.scss */
-#app #todobody #todolist .list .completed {
+/* line 229, ../sass/all.scss */
+#todobody #todolist .list .completed {
   text-decoration: line-through;
 }
-/* line 170, ../sass/all.scss */
-#app #todobody #todolist .point {
+/* line 233, ../sass/all.scss */
+#todobody #todolist .point {
   background-color: RGBA(253, 244, 220, 1);
+}
+/* line 237, ../sass/all.scss */
+#todobody .count {
+  width: 70%;
+  margin: 20px auto;
+  color: #C8C8C8;
+  font-size: 24px;
+  font-family: Roboto-Italic;
 }
